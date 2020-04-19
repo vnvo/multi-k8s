@@ -26,7 +26,7 @@
             "name": "nginx",
             "image": "thek33per/multi-nginx",
             "essential": true,
-            "memory": 128
+            "memory": 128,
             "portMappings": [
                 {
                     "hostPort": 80,

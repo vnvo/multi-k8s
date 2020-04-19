@@ -10,10 +10,10 @@ script:
   - docker run -e CI=true thek33per/multi-docker-fib npm test
 
 after_success:
-  - docker buid -t thek33per/multi-client ./client
-  - docker buid -t thek33per/multi-nginx ./nginx
-  - docker buid -t thek33per/multi-server ./server
-  - docker buid -t thek33per/multi-worker ./worker
+  - docker build -t thek33per/multi-client ./client
+  - docker build -t thek33per/multi-nginx ./nginx
+  - docker build -t thek33per/multi-server ./server
+  - docker build -t thek33per/multi-worker ./worker
   - echo "$DOCKER_PASS" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push thek33per/multi-client
   - docker push thek33per/multi-nginx
